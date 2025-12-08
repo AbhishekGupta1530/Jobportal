@@ -1,0 +1,39 @@
+{% load static %}
+
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+  <!-- ===== Navbar ===== -->
+ <nav>
+    <div class="logo">JobPortal</div>
+
+    <!-- Search Bar -->
+    <form action="/Job/viewjob" method="GET" class="search-bar">
+        <input type="text" name="q" placeholder="Search jobs, companies..." required>
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+
+        {% if user.is_authenticated %}
+        <li><a href="/Job">Jobs</a></li>
+        <li><a href="/company">Companies</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/jobseeker/viewProfile/{{user}}">Welcome {{user}}</a></li>
+
+        {% else %}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+
+  {% block content %}{% endblock content %}
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    © 2025 JobPortal | All Rights Reserved
+  </footer>
+

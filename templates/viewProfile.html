@@ -1,0 +1,119 @@
+{% extends "basic.html" %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/viewProfile.css' %}">
+
+<div class="profile-container">
+
+    <div class="profile-header">
+        <img src="{{ profile.profilephoto.url }}" class="profile-photo" alt="Profile Photo">
+        <h2>{{ profile.full_name }}</h2>
+        <p>{{ profile.professionalNo }}</p>
+    </div>
+
+    <!-- Basic Information -->
+    <div class="section">
+        <h3>Basic Information</h3>
+        <div class="detail-box">
+
+            <div class="row">
+                <div class="label">Full Name:</div>
+                <div class="value">{{ profile.full_name }}</div>
+            </div>
+
+            <div class="row">
+                <div class="label">Email:</div>
+                <div class="value">{{ profile.email }}</div>
+            </div>
+
+            <div class="row">
+                <div class="label">Phone No:</div>
+                <div class="value">{{ profile.phoneno }}</div>
+            </div>
+
+            <div class="row">
+                <div class="label">Location:</div>
+                <div class="value">{{ profile.location }}</div>
+            </div>
+
+            <div class="row">
+                <div class="label">Address:</div>
+                <div class="value">{{ profile.address }}</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Resume -->
+    <div class="section">
+        <h3>Resume</h3>
+        <div class="detail-box">
+            <a href="{{ profile.resume.url }}" class="resume-link" download>Download Resume</a>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h3>Skills</h3>
+        <div class="detail-box">{{ profile.skills }}</div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h3>Education</h3>
+        <div class="detail-box">{{ profile.education }}</div>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <h3>Experience</h3>
+        <div class="detail-box">{{ profile.experience }}</div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+        <h3>Certifications</h3>
+        <div class="detail-box">{{ profile.certifications }}</div>
+    </div>
+
+    <!-- Job Preferences -->
+    <div class="section">
+        <h3>Job Preferences</h3>
+        <div class="detail-box">{{ profile.job_preferences }}</div>
+    </div>
+
+    <!-- Salary -->
+    <div class="section">
+        <h3>Salary Expectations</h3>
+        <div class="detail-box">
+
+            <div class="row">
+                <div class="label">Desired Salary:</div>
+                <div class="value">{{ profile.desired_salary }}</div>
+            </div>
+
+            <div class="row">
+                <div class="label">Expected Salary:</div>
+                <div class="value">{{ profile.expected_salary }}</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Job Type -->
+    <div class="section">
+        <h3>Job Type</h3>
+        <div class="detail-box">{{ profile.job_type }}</div>
+    </div>
+
+    <!-- Preferred Location -->
+    <div class="section">
+        <h3>Preferred Job Location</h3>
+        <div class="detail-box">{{ profile.preferred_location }}</div>
+    </div>
+
+</div>
+
+
+{% endblock content %}

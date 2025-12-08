@@ -1,0 +1,105 @@
+{% extends "basic.html" %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+<div class="profile-container">
+    <h2 class="text-center mb-4">Create Your Job Seeker Profile</h2>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <input type="hidden" value="{{user}}" name="name">
+      <!-- BASIC INFO -->
+      <h3 class="section-title">Basic Information</h3>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" name="full_name" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email (Login ID)</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Phone Number</label>
+          <input type="text" class="form-control" name="phone">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-control" name="location">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Profile Photo</label>
+        <input type="file" class="form-control" name="profile_photo" accept="image/*">
+      </div>
+
+      <!-- PROFESSIONAL INFO -->
+      <h3 class="section-title">Professional Information</h3>
+      <div class="mb-3">
+        <label class="form-label">Resume / CV</label>
+        <input type="file" class="form-control" name="resume" accept=".pdf,.doc,.docx">
+        <small class="text-muted">Upload your resume (PDF/DOC/DOCX)</small>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Skills (comma-separated)</label>
+        <input type="text" class="form-control" name="skills" placeholder="e.g., JavaScript, Python, SQL">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Education</label>
+        <textarea class="form-control" name="education" rows="2" placeholder="e.g., B.Tech in Computer Science, 2020 - XYZ University"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Experience</label>
+        <textarea class="form-control" name="experience" rows="3" placeholder="Company, Role, Duration, Description"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Certifications / Achievements</label>
+        <textarea class="form-control" name="certifications" rows="2" placeholder="e.g., AWS Certified Developer, Hackathon Winner 2023"></textarea>
+      </div>
+
+      <!-- JOB PREFERENCES -->
+      <h3 class="section-title">Job Preferences</h3>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Desired Job Title(s)</label>
+          <input type="text" class="form-control" name="desired_job_title" placeholder="e.g., Frontend Developer">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Expected Salary / Rate</label>
+          <input type="text" class="form-control" name="expected_salary" placeholder="e.g., $60,000/year">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Job Type</label>
+          <select class="form-select" name="job_type">
+            <option selected disabled>Choose...</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Remote</option>
+            <option>Internship</option>
+            <option>Contract</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Preferred Location</label>
+          <input type="text" class="form-control" name="preferred_location" placeholder="e.g., New York, Remote">
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary px-4 py-2">Save Profile</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock content %}

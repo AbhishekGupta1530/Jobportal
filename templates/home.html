@@ -1,0 +1,80 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar">
+  <div class="logo">JobPortal</div>
+
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/Job">Jobs</a></li>
+    <li><a href="/company">Companies</a></li>
+
+    {% if user.is_authenticated %}
+      <li><a href="/profile">My Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+    {% else %}
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+<!-- ===== Hero Section (Search Area) ===== -->
+<section class="hero">
+  <h1>Find your dream job now</h1>
+  <p>5 lakh+ jobs for you to explore</p>
+
+  <form action="/Job" method="GET" class="search-box">
+    <input type="text" name="title" placeholder="Search jobs by skills, title...">
+    <input type="text" name="location" placeholder="Location">
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<!-- ===== Job Category Cards ===== -->
+<section class="categories">
+  <h2>Trending on JobPortal</h2>
+
+  <div class="cat-grid">
+
+    <div class="cat-card">
+      <h3>Software Developer</h3>
+      <p>10,000+ Jobs</p>
+    </div>
+
+    <div class="cat-card">
+      <h3>Data Science</h3>
+      <p>4,500+ Jobs</p>
+    </div>
+
+    <div class="cat-card">
+      <h3>Python Developer</h3>
+      <p>3,800+ Jobs</p>
+    </div>
+
+    <div class="cat-card">
+      <h3>Remote Jobs</h3>
+      <p>8,000+ Jobs</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Top Companies ===== -->
+<section class="companies">
+  <h2>Top companies hiring now</h2>
+
+  <div class="logo-row">
+    <img src="{% static 'images/google.png' %}">
+    <img src="{% static 'images/tcs.png' %}">
+    <img src="{% static 'images/infosys.png' %}">
+    <img src="{% static 'images/wipro.png' %}">
+    <img src="{% static 'images/accenture.png' %}">
+  </div>
+</section>
+{% endblock content %}

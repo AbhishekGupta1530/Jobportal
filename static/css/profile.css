@@ -1,0 +1,134 @@
+
+.profile-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 40px 50px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 900px;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+}
+
+/* Headings */
+.profile-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #ffeb3b;
+  font-weight: 600;
+  border-left: 5px solid #ffeb3b;
+  padding-left: 10px;
+}
+
+/* Labels & Inputs */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-control,
+.form-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 5px #ffeb3b;
+}
+
+/* Placeholder color */
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* File inputs */
+input[type="file"] {
+  background-color: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #ffeb3b;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+/* Small text */
+.text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.85rem;
+}
+
+/* Form spacing */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.col-md-6 {
+  flex: 1;
+  min-width: 250px;
+}
+
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+/* Center alignment */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 95%;
+    padding: 30px 25px;
+  }
+
+  .profile-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
