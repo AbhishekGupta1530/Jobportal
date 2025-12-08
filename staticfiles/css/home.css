@@ -1,0 +1,134 @@
+/* ===== Navbar ===== */
+.navbar {
+  background: rgb(163, 48, 48);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0a66c2;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #0a66c2;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #e7f0fa;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0a2a43;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-box input {
+  width: 270px;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.search-box button {
+  background: #0a66c2;
+  color: rgb(190, 43, 43);
+  padding: 14px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #004a99;
+}
+
+/* ===== Categories ===== */
+.categories {
+  padding: 50px;
+}
+
+.categories h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.cat-card h3 {
+  font-size: 20px;
+  color: #0a66c2;
+}
+
+/* ===== Companies ===== */
+.companies {
+  padding: 50px;
+  background: #691818;
+  text-align: center;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.logo-row img {
+  width: 100px;
+  opacity: 0.7;
+}
+
+.logo-row img:hover {
+  opacity: 1;
+}

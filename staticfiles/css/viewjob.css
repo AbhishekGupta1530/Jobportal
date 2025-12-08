@@ -1,0 +1,31 @@
+
+        .job-card {
+            border-radius: 12px;
+            padding: 20px;
+            background: white;
+            transition: 0.3s;
+            border: 1px solid #e5e7eb;
+        }
+        .job-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .company-logo {
+            width: 55px;
+            height: 55px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .badge-jobtype {
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 20px;
+        }
+        .job-title {
+            font-weight: 600;
+            font-size: 20px;
+        }
+        .salary-range {
+            font-weight: 500;
+            color: #0284c7;
+        }
