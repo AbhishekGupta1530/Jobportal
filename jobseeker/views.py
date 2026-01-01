@@ -46,6 +46,7 @@ def jobseekerProfile(request):
 
 def viewProfile(request, name):
     profile = Profile.objects.get(name=name)
+    print(profile)
     return render(request, "viewprofile.html", {"profile": profile})
 
 

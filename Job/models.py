@@ -30,18 +30,9 @@ class JobModel(models.Model):
         null=True,
         help_text="List key skills, separated by commas (e.g., Python, SQL, AWS, Django)."
     )
-    salary_min = models.DecimalField(
-        max_digits=10, 
-        decimal_places=2, 
-        blank=True, 
-        null=True
-    )
-    salary_max = models.DecimalField(
-        max_digits=10, 
-        decimal_places=2, 
-        blank=True, 
-        null=True
-    )
+    salary_min = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    salary_max = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+
     deadline = models.DateField(blank=True, null=True)
     
     # Status and Metadata

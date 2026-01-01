@@ -26,7 +26,17 @@ SECRET_KEY = 'django-insecure-%#svpgle@nh5xgm55tc#ba%z@yqog$q2-6qhu&u-zt5kr@tl+7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 
+    'jobportal-cz00.onrender.com',
+    'localhost',
+    '127.0.0.1'
+    ]
+
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://jobportal-cz00.onrender.com',
+]
 
 
 # Application definition
@@ -46,8 +56,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'Jobportal.urls'
 
@@ -81,14 +92,14 @@ WSGI_APPLICATION = 'Jobportal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'Abhishek',
-        # 'USER': 'root',
-        # 'PASSWORD': 'Abhi26@gupta',
-        # 'HOST': 'localhost',  
-        # 'PORT': '3306',       
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Abhishek',
+        'USER': 'root',
+        'PASSWORD': 'Abhi26@gupta',
+        'HOST': 'localhost',  
+        'PORT': '3306',       
     
     }
 }
